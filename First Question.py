@@ -3,7 +3,7 @@ from common import *
 import networkx as nx
 
 
-def kruskal_mst_edges(G, minimum, weight='weight', keys=True, data=True):
+def kruskal(G, minimum, weight='weight', keys=True, data=True):
     subtrees = UnionFind()
     if G.is_multigraph():
         edges = G.edges(keys=True, data=True)
@@ -68,7 +68,5 @@ G.add_edge('l', 'e', weight=15)
 G.add_edge('l', 'h', weight=14)
 
 print("Minimum spanning tree:")
-for edge in kruskal_mst_edges(G, True):
+for edge in kruskal(G, True):
     print(edge)
-
-# create nx graph
